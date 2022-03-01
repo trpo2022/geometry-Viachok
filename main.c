@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 
-int CheckFormat(char string[])
+int CheckFormat(char string[])//Check Type of entered figure
 {
     int succes = 0;
     char figure[20];
