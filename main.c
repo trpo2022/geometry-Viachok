@@ -30,7 +30,7 @@ int main()
             break;
         if(GetFormat(format,cords))
         {
-            printf("Object: Circle\nX: %d\nY: %d\nRadius: %d\n",cords[0],cords[1],cords[2]);
+            printf("Object: %s\nX: %d\nY: %d\nRadius: %d\n",format,cords[0],cords[1],cords[2]);
         }
         else
         {
