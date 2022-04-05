@@ -1,7 +1,17 @@
-all: main
-main: main.c
-	gcc -Wall -Werror -o main main.c -lm
+CC=gcc
+CFLAGS=-c -Wall
+LDFLAGS=-а
+SOURCES=main.c geometry.c
+OBJECTS=$(SOURCES:.c=.o)
+EXECUTABLE=main
+
+all: $(SOURCES) $(EXECUTABLE)
+    
+$(EXECUTABLE): $(OBJECTS) 
+    $(CC) $(LDFLAGS) $(OBJECTS) -o $@
+
+.c.o:
+    $(CC) $(CFLAGS) $< -o $@
 clean:
-	rm main
-run:
-	./main
+    rm -rf *.o $(EXECUTABLE)
+all: main

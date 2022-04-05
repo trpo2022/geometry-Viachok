@@ -1,41 +1,41 @@
 #include <stdio.h>
 #include <string.h>
-
-int GetFormat(char string[], int* arr)
-{
-    int cords[3];
-    int* adres = arr;
-    if (!strcmp(string, "circle")) {
-        if (scanf("%d %d %d", &cords[0], &cords[1], &cords[2]) == 3) {
-            *adres = cords[0];
-            adres++;
-            *adres = cords[1];
-            adres++;
-            *adres = cords[2];
-            return 1;
-        }
-    }
-    return 0;
-}
+#include "geometry.h"
 
 int main()
 {
     char format[30];
-    int cords[3];
+    int *cords;
     printf("Type !exit to stop the programm.\n");
     while (1) {
         scanf("%s", format);
         if (!strcmp(format, "!exit"))
             break;
-        if (GetFormat(format, cords)) {
-            printf("Object: %s\nX: %d\nY: %d\nRadius: %d\n",
-                   format,
+    	geometry object = *geometry_new(format);
+        if (geometry_get_type(&object)) {
+    	    cords = geometry_get_coordinates(&object);
+    	    if(format=="circle"){
+            printf("Object: %s\nX: %d\nY: %d\nRadius: %d\n Perimeter %d\n",
+                   geometry_get_type(&object),
                    cords[0],
                    cords[1],
-                   cords[2]);
+                   cords[2],
+                   geometry_get_perimeter(&object));
+    	    if(format=="triangle"){
+            printf("Object: %s\nX1: %d\nY2: %d\nX3: %d\nY4: %d\nX5: %d\nY6: %d\n Perimeter %d\n",
+                   geometry_get_type(&object),
+                   cords[0],
+                   cords[1],
+                   cords[2],
+                   cords[3],
+                   cords[4],
+                   cords[5],
+                   geometry_get_perimeter(&object));
+	    }
         } else {
             printf("Incorrect Format\n");
         }
+    }
     }
     return 0;
 }
