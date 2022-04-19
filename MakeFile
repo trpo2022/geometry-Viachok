@@ -4,13 +4,13 @@ CPPFLAGS = -MMD
 bin/main: obj/src/main/main.o obj/src/geometry/geometrylib.a
 	$(CC) $(CFLAGS) -o $@ $^ -lm
 
-obj/src/main/main.o: src/main/main.c
+obj/src/main/main.o: ./src/main/main.c
 	$(CC) -c $(CFLAGS) $(CPPFLAGS) -o $@ $<
 
-obj/src/geometry/geometry.o: src/geometry/geometry.c
+obj/src/geometry/geometry.o: ./src/geometry/geometry.c
 	$(CC) -c $(CFLAGS) $(CPPFLAGS) -o $@ $<
 
-obj/src/geometry/geometrylib.a: obj/src/geometry/geometry.o
+obj/src/geometry/geometrylib.a: ./obj/src/geometry/geometry.o
 	ar rcs $@ $^
 -include main.d geometry.d
 
