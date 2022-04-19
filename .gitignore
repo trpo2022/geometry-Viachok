@@ -1,2 +1,3 @@
 bin/main
-obj/src/*
+obj/src/main/*
+obj/src/geometry/*
