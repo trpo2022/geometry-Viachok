@@ -1,17 +1,15 @@
-CC=gcc
-CFLAGS=-c -Wall
-LDFLAGS=-а
-SOURCES=main.c geometry.c
-OBJECTS=$(SOURCES:.c=.o)
-EXECUTABLE=main
+CFLAGS = -Wall -Wextra -Werror -I src
+CPPFLAGS = -MMD
 
-all: $(SOURCES) $(EXECUTABLE)
-    
-$(EXECUTABLE): $(OBJECTS) 
-    $(CC) $(LDFLAGS) $(OBJECTS) -o $@
+bin/main: obj/src/main/main.o obj/src/geometry/geometrylib.a
+	$(CC) $(CFLAGS) -o $@ $^ -lm
 
-.c.o:
-    $(CC) $(CFLAGS) $< -o $@
-clean:
-    rm -rf *.o $(EXECUTABLE)
-all: main
+obj/src/main/main.o: src/main/main.c
+	$(CC) -c $(CFLAGS) $(CPPFLAGS) -o $@ $<
+
+obj/src/geometry/geometry.o: src/geometry/geometry.c
+	$(CC) -c $(CFLAGS) $(CPPFLAGS) -o $@ $<
+
+obj/src/geometry/geometrylib.a: obj/src/geometry/geometry.o
+	ar rcs $@ $^
+-include main.d geometry.d
