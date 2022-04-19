@@ -13,3 +13,6 @@ obj/src/geometry/geometry.o: src/geometry/geometry.c
 obj/src/geometry/geometrylib.a: obj/src/geometry/geometry.o
 	ar rcs $@ $^
 -include main.d geometry.d
+
+clean:
+	rm obj/src/*/*.o
