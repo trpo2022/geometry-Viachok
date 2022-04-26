@@ -15,4 +15,4 @@ obj/src/geometry/geometrylib.a: obj/src/geometry/geometry.o
 -include main.d geometry.d
 
 clean:
-	rm obj/src/*/*.o
+	rm obj/src/*/*.[oda]
