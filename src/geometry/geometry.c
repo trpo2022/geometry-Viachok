@@ -146,7 +146,7 @@ float geometry_get_perimeter(geometry* object)
     int intersection = 0;
     if(first->type == "circle" && second->type == "circle")
     {
-	intersection
+        intersection
                 = sqrt(pow(fabs(fabs((float)first->coordinates[0])
                                  - fabs((float)second->coordinates[0])),
                             2)
@@ -154,23 +154,23 @@ float geometry_get_perimeter(geometry* object)
                                    - fabs((float)second->coordinates[1])),
                               2));
         if(intersection < second->coordinates[3] + first->coordinates[3])
-    	    return 1;
-    	else
-    	    return 0;
+            return 1;
+        else
+            return 0;
     }
     if(first->type == "circle" && second->type == "triangle")
     {
-	k = (y1 — y2) / (x1 — x2).
-	b = y2 — k * x2.
-	pos(x,2) + pow(y,2) == pow(r,2)
-	y = k * x + b
+        k = (y1 — y2) / (x1 — x2).
+        b = y2 — k * x2.
+        pos(x,2) + pow(y,2) == pow(r,2)
+        y = k * x + b
     }
     if(first->type == "triangle" && second->type == "circle")
     {
-	
+
     }
     if(first->type == "trinagle" && second->type == "triangle")
     {
-	
+
     }
 }*/
