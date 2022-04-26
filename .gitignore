@@ -1,1 +1,3 @@
-main
+bin/main
+obj/src/main/*.[od]
+obj/src/geometry/*.[oda]
