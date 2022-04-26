@@ -48,7 +48,7 @@ void geometry_clear_object(geometry* object)
     free(object);
 }
 
-int geeometry_set_type(geometry* object, char* string)
+int geometry_set_type(geometry* object, char* string)
 {
     int cords[10];
     int cords_amount = 0;
@@ -83,7 +83,7 @@ int geeometry_set_type(geometry* object, char* string)
     return -1;
 }
 
-int geeometry_set_coordinates(geometry* object, int* coordinates)
+int geometry_set_coordinates(geometry* object, int* coordinates)
 {
     if (sizeof(coordinates) != sizeof(object->coordinates))
         return -1;
@@ -140,3 +140,37 @@ float geometry_get_perimeter(geometry* object)
     }
     return -1;
 }
+
+/*int geometry_is_intersecting(geometry* first, geometry* second)
+{
+    int intersection = 0;
+    if(first->type == "circle" && second->type == "circle")
+    {
+	intersection
+                = sqrt(pow(fabs(fabs((float)first->coordinates[0])
+                                 - fabs((float)second->coordinates[0])),
+                            2)
+                        + pow(fabs(fabs((float)first->coordinates[1])
+                                   - fabs((float)second->coordinates[1])),
+                              2));
+        if(intersection < second->coordinates[3] + first->coordinates[3])
+    	    return 1;
+    	else
+    	    return 0;
+    }
+    if(first->type == "circle" && second->type == "triangle")
+    {
+	k = (y1 — y2) / (x1 — x2).
+	b = y2 — k * x2.
+	pos(x,2) + pow(y,2) == pow(r,2)
+	y = k * x + b
+    }
+    if(first->type == "triangle" && second->type == "circle")
+    {
+	
+    }
+    if(first->type == "trinagle" && second->type == "triangle")
+    {
+	
+    }
+}*/

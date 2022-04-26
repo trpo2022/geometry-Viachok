@@ -1,4 +1,4 @@
-CFLAGS = -Wall -Wextra -fPIE -Werror -I src
+CFLAGS = -Wall -Wextra -Werror -I src
 CPPFLAGS = -MMD
 
 bin/main: obj/src/main/main.o obj/src/geometry/geometrylib.a
