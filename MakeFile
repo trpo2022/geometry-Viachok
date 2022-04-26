@@ -1,8 +1,8 @@
-CFLAGS = -Wall -Wextra -Werror -I src
+CFLAGS = -Wall -Wextra -fPIE -Werror -I src
 CPPFLAGS = -MMD
 
 bin/main: obj/src/main/main.o obj/src/geometry/geometrylib.a
-	$(CC) $(CFLAGS) -o $@ $^ -fPIE -lm
+	$(CC) $(CFLAGS) -o $@ $^ -lm
 
 obj/src/main/main.o: src/main/main.c
 	$(CC) -c $(CFLAGS) $(CPPFLAGS) -o $@ $<
