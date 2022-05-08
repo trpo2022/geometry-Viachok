@@ -141,7 +141,7 @@ float geometry_get_perimeter(geometry* object)
     return -1;
 }
 
-/*int geometry_is_intersecting(geometry* first, geometry* second)
+int geometry_is_intersecting(geometry* first, geometry* second)
 {
     int intersection = 0;
     if(first->type == "circle" && second->type == "circle")
@@ -158,19 +158,8 @@ float geometry_get_perimeter(geometry* object)
         else
             return 0;
     }
-    if(first->type == "circle" && second->type == "triangle")
-    {
-        k = (y1 — y2) / (x1 — x2).
-        b = y2 — k * x2.
-        pos(x,2) + pow(y,2) == pow(r,2)
-        y = k * x + b
-    }
-    if(first->type == "triangle" && second->type == "circle")
-    {
-
-    }
-    if(first->type == "trinagle" && second->type == "triangle")
-    {
-
-    }
-}*/
+	else
+	{
+		return -1;
+	}
+}
