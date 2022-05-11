@@ -144,7 +144,7 @@ float geometry_get_perimeter(geometry* object)
 int geometry_is_intersecting(geometry* first, geometry* second)
 {
     int intersection = 0;
-    if(first->type == "circle" && second->type == "circle")
+    if(!strcmp(first->type, "circle") && !strcmp(second->type, "circle"))
     {
         intersection
                 = sqrt(pow(fabs(fabs((float)first->coordinates[0])
