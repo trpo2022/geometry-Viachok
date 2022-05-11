@@ -16,3 +16,4 @@ obj/src/geometry/geometrylib.a: obj/src/geometry/geometry.o
 
 clean:
 	rm obj/src/*/*.[oda]
+	
