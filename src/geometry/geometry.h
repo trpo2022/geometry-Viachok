@@ -20,4 +20,4 @@ char *geometry_get_type(geometry *object);
 
 float geometry_get_perimeter(geometry *object);
 
-void geometry_clear_object(geometry* object);
+void geometry_clear_object(geometry *object);
