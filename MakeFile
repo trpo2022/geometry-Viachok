@@ -1,4 +1,5 @@
 CFLAGS = -Wall -Wextra -Werror -I src
+TESTFLAGS =  -I thirdparty
 CPPFLAGS = -MMD
 
 bin/main: obj/src/main/main.o obj/src/geometry/geometrylib.a
@@ -14,6 +15,15 @@ obj/src/geometry/geometrylib.a: obj/src/geometry/geometry.o
 	ar rcs $@ $^
 -include main.d geometry.d
 
+bin/test: obj/test/main.o obj/test/board_test.o obj/src/geometry/geometrylib.a
+	$(CC) $(TESTFLAGS) $(CFLAGS) -o $@ $^ -lm
+
+obj/test/main.o: test/main.cpp
+	$(CC) -c $(TESTFLAGS) $(CFLAGS) $(CPPFLAGS) -o $@ $<
+
+obj/test/board_test.o: test/board_test.cpp
+	$(CC) -c $(TESTFLAGS) $(CFLAGS) $(CPPFLAGS) -o $@ $<
+
 clean:
 	rm obj/src/*/*.[oda]
-	
+

@@ -117,6 +117,7 @@ float geometry_get_perimeter(geometry *object) {
 
 int geometry_is_intersecting(geometry *first, geometry *second) {
   int intersection = 0;
+  printf("test");
   if (!strcmp(first->type, "circle") && !strcmp(second->type, "circle")) {
     intersection = sqrt(pow(fabs(fabs((float)first->coordinates[0]) -
                                  fabs((float)second->coordinates[0])),
@@ -124,7 +125,7 @@ int geometry_is_intersecting(geometry *first, geometry *second) {
                         pow(fabs(fabs((float)first->coordinates[1]) -
                                  fabs((float)second->coordinates[1])),
                             2));
-    if (intersection < second->coordinates[3] + first->coordinates[3])
+    if (intersection > second->coordinates[3] + first->coordinates[3])
       return 1;
     else
       return 0;
