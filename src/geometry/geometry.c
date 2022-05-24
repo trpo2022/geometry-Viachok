@@ -98,16 +98,16 @@ float geometry_get_perimeter(geometry *object) {
                       pow(fabs(fabs((float)object->coordinates[1]) -
                                fabs((float)object->coordinates[3])),
                           2));
-    perimeter += sqrt(pow(fabs(fabs((float)object->coordinates[2]) -
-                               fabs((float)object->coordinates[4])),
-                          2) +
-                      pow(fabs(fabs((float)object->coordinates[4]) -
-                               fabs((float)object->coordinates[5])),
-                          2));
     perimeter += sqrt(pow(fabs(fabs((float)object->coordinates[0]) -
                                fabs((float)object->coordinates[4])),
                           2) +
                       pow(fabs(fabs((float)object->coordinates[1]) -
+                               fabs((float)object->coordinates[5])),
+                          2));
+    perimeter += sqrt(pow(fabs(fabs((float)object->coordinates[2]) -
+                               fabs((float)object->coordinates[4])),
+                          2) +
+                      pow(fabs(fabs((float)object->coordinates[3]) -
                                fabs((float)object->coordinates[5])),
                           2));
     return perimeter;

@@ -7,7 +7,8 @@
 
 CTEST(arithmetic_suite, geometry_triangle_perimeter) {
   // Given
-  geometry objectA = *geometry_new("triangle");
+  geometry objectA;
+  objectA.type = "triangle";
   objectA.coordinates = malloc(sizeof(int) * 3);
   objectA.coordinates[0] = 0;
   objectA.coordinates[1] = 0;
@@ -33,7 +34,8 @@ CTEST(arithmetic_suite, geometry_triangle_perimeter) {
 
 CTEST(arithmetic_suite, geometry_circle_perimeter) {
   // Given
-  geometry objectA = *geometry_new("circle");
+  geometry objectA;
+  objectA.type = "circle";
   objectA.coordinates = malloc(sizeof(int) * 3);
   objectA.coordinates[0] = 1;
   objectA.coordinates[1] = 2;
@@ -49,7 +51,8 @@ CTEST(arithmetic_suite, geometry_circle_perimeter) {
 
 CTEST(data_suite, geometry_coordinates_change) {
   // Given
-  geometry objectA = *geometry_new("circle");
+  geometry objectA;
+  objectA.type = "circle";
   objectA.coordinates = malloc(sizeof(int) * 3);
   objectA.coordinates[0] = 1;
   objectA.coordinates[1] = 2;
@@ -66,12 +69,14 @@ CTEST(data_suite, geometry_coordinates_change) {
 
 CTEST(arithmetic_suite, circle_intersection) {
   // Given
-  geometry objectA = *geometry_new("circle");
+  geometry objectA;
+  objectA.type = "circle";
   objectA.coordinates = malloc(sizeof(int) * 3);
   objectA.coordinates[0] = 1;
   objectA.coordinates[1] = 2;
   objectA.coordinates[2] = 3;
-  geometry objectB = *geometry_new("circle");
+  geometry objectB;
+  objectB.type = "circle";
   objectB.coordinates = malloc(sizeof(int) * 3);
   objectB.coordinates[0] = 2;
   objectB.coordinates[1] = 2;
