@@ -1,4 +1,5 @@
 bin/main
+bin/test
 obj/src/main/*.[od]
 obj/src/geometry/*.[oda]
 obj/test/*.[oda]
